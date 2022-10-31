@@ -1,5 +1,7 @@
 # Encuentros de la Tierra Media
 
+
+
 En este juego, varios personajes cruzarán caminos en la Tierra Media para batirse a duelo.
 
 ## Personajes _[Characters]_
