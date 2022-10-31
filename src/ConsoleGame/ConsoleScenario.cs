@@ -161,11 +161,37 @@ namespace Program
             Console.WriteLine("Let's add items to your character");
 
             ItemType type = this.ReadItemType();
-            Console.WriteLine(type);
             while (type != default(ItemType))
             {
                 IItem item = ItemFactory.GetItem(type);
-                items.Add(item);
+
+                if(type.ToString() == "GuantePoder"){
+                    GuantePoder Guante = null;
+                    foreach (IItem myItem in items){
+                        if(myItem.ToString() == "Guante de Poder"){
+                            Guante = (GuantePoder)myItem;
+                        }
+                    } 
+                    if(Guante==null){
+                        items.Add(item);
+                    }
+                } else if (item.ToString() == "Gema"){
+                    GuantePoder Guante = null;
+
+                    foreach (IItem myItem in items){
+                        if(myItem.ToString() == "Guante de Poder"){
+                            Guante = (GuantePoder)myItem;
+                        }
+                    } 
+                    if(Guante!=null){
+                        Guante.AddGema((Gema)item);
+                        items.Add(item);
+                    }else{
+                        Console.WriteLine("You cannot add Gemas without having a GuantePoder.");
+                    }
+                    
+                }else items.Add(item);
+
                 this.AddObjectsToItem(item);
 
                 type = this.ReadItemType();
