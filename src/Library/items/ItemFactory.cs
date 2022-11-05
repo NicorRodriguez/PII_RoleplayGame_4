@@ -8,8 +8,11 @@ namespace RoleplayGame.Items
         Magic = 1,
         Robes = 2,
         Clothes = 3,
-        GuantePoder = 4,
-        Gema = 5,
+        Coraza = 4,
+        Baston = 5,
+        BastonMagico = 6,
+        GuantePoder = 7,
+        Gema = 8,
     }
 
     /// <summary>
@@ -29,6 +32,9 @@ namespace RoleplayGame.Items
                 case ItemType.Magic: return new Magic();
                 case ItemType.Robes: return new Robes();
                 case ItemType.Clothes: return new Clothes();
+                case ItemType.Coraza: return new Coraza();
+                case ItemType.Baston: return new Baston();
+                case ItemType.BastonMagico: return new BastonMagico();
                 case ItemType.GuantePoder: return new GuantePoder();
                 case ItemType.Gema: return new Gema();
 
